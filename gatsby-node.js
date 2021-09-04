@@ -32,7 +32,7 @@ exports.createPages = async ({ graphql, reporter, actions }) => {
 
         createPage({
             path: node.fields.slug,
-            component: require.resolve(`./src/layouts/${layout}.tsx`),
+            component: require.resolve(`./src/layouts/${layout}.jsx`),
             context: {
                 relativePath: node.fields.relativePath
             }
