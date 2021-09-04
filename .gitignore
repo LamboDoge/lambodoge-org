@@ -1,0 +1,12 @@
+# gatsby files
+.cache/
+public
+
+# dependencies
+node_modules/
+
+#misc
+**/.DS_Store
+yarn-error.log
+.env
+.env.*
