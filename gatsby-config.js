@@ -37,15 +37,7 @@ module.exports = {
                         options: {
                             maxWidth: 1200,
                         },
-                    },
-                ],
-                plugins: [ { resolve: `gatsby-remark-images` } ],
-            },
-        }, {
-            resolve: "gatsby-transformer-remark",
-            options: {
-                plugins: [
-                    {
+                    }, {
                         resolve: `gatsby-remark-twitter-cards`,
                         options: {
                             title: 'LamboDoge', // website title
@@ -58,6 +50,13 @@ module.exports = {
                             fontFile: require.resolve('./static/fonts/Poppins-Medium.ttf') // will override fontStyle - path to custom TTF font
                         }
                     },
+                ],
+                plugins: [ { resolve: `gatsby-remark-images` } ],
+            },
+        }, {
+            resolve: "gatsby-transformer-remark",
+            options: {
+                plugins: [
                 ]
             }
         }, {

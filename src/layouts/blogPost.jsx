@@ -148,7 +148,7 @@ const BlogBody = styled.div`
     `}
 `
 
-export default function BlogPost({data, pageContext, path}) {
+export default function BlogPost({data, pageContext, path, location}) {
     const {node: post} = data.allMdx.edges.filter(post =>
         post.node.fields.slug === path
     )[0] ?? {node: undefined}
@@ -161,6 +161,7 @@ export default function BlogPost({data, pageContext, path}) {
         <Layout>
             <Seo
                 title={post.frontmatter.title}
+                path={location.pathname}
             />
         <BannerSection>
             <Banner fluid={post.frontmatter.banner.childImageSharp.fluid} />
