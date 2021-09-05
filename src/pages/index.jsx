@@ -41,7 +41,7 @@ const HomeSection = styled(StyledSection)`
     ${({theme}) => theme.media.large`
         text-align: center;
         margin-bottom: 10rem;
-        flex-direction: column;
+        flex-direction: column-reverse;
     `}
 
     ${({theme}) => theme.media.medium`
@@ -64,8 +64,12 @@ const Title = styled.h1`
     margin: 0;
 
     ${({theme}) => theme.media.small`
-        font-size: 3rem;
+        font-size: 3.5rem;
         text-align: left;
+
+        & > span {
+            display: none;
+        }
     `}
 `
 
@@ -91,6 +95,14 @@ const SocialLinksWrapper = styled.div`
         width: 1.5rem;
         fill: ${({theme}) => theme.text1};
     }
+
+    ${({theme}) => theme.media.large`
+        justify-content: center;
+    `}
+
+    ${({theme}) => theme.media.small`
+        justify-content: left;
+    `}
 `
 
 const LamboIllustration = styled(Img)`
@@ -144,7 +156,10 @@ const IndexPage = (props) => {
                     fluid={data.lamboIllustration.childImageSharp.fluid}
                 />
                 <div>
-                    <Title>SWAP &nbsp;|&nbsp; STAKE PROVIDE &nbsp;|&nbsp; EARN</Title>
+                    <Title>
+                        SWAP <span> | </span> STAKE<br/>
+                        PROVIDE <span> | </span> EARN
+                    </Title>
                     <Subtitle>
                         The path between real DeFi innovations, good user experience and aggresive marketing.
                     </Subtitle>
@@ -189,6 +204,18 @@ const IndexPage = (props) => {
     )
 }
 
+const TokenSectionWrapper = styled(RowCentered)`
+    gap: 4rem;
+
+    ${({theme}) => theme.media.medium`
+        flex-direction: column-reverse;
+    `}
+
+    ${({theme}) => theme.media.small`
+        gap: 2rem;
+    `}
+`
+
 const WireframeWrapper = styled.div`
     position: relative;
     padding: 0 24px 0 48px;
@@ -208,11 +235,33 @@ const WireframeWrapper = styled.div`
             font-weight: 600;
         }
     }
+
+    ${({theme}) => theme.media.extraSmall`
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0;
+
+        & > ${BlurredCard} {
+            position: initial;
+            top: 0;
+            bottom: 0;
+            margin: 0;
+
+            & > p {
+                font-size: 16px;
+            }
+        }
+    `}
 `
 
 const StyledWireframe = styled(Wireframe)`
     height: 360px;
     flex-shrink: 0;
+
+    ${({theme}) => theme.media.extraSmall`
+        display: none;
+    `}
 `
 
 const TokenSection = () => {
@@ -224,7 +273,7 @@ const TokenSection = () => {
             >
                 TOKEN
             </SectionTitle>
-            <RowCentered gap="4rem" >
+            <TokenSectionWrapper>
                 <div>
                     <h3>No tax on transfer</h3>
                     <p>
@@ -250,7 +299,7 @@ const TokenSection = () => {
                         </p>
                     </BlurredCard>
                 </WireframeWrapper>
-            </RowCentered>
+            </TokenSectionWrapper>
         </StyledSection>
     )
 }
@@ -259,6 +308,14 @@ const CardsWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 4rem;
+
+    ${({theme}) => theme.media.medium`
+        grid-gap: 2rem;
+    `}
+
+    ${({theme}) => theme.media.small`
+        grid-template-columns: repeat(1, 1fr);
+    `}
 `
 
 const IconCardWrapper = styled(RowCentered)`

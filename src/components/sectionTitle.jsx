@@ -22,6 +22,16 @@ const StyledSectionTitle = styled.div`
     & > a:hover {
         text-decoration: underline;
     }
+
+    ${({theme}) => theme.media.extraSmall`
+        & > h2 {
+            font-size: 2.5rem;
+        }
+
+        & > a {
+            font-size: 16px;
+        }
+    `}
 `
 
 const SectionTitle = ({children, link = undefined, linkName = undefined}) => {
