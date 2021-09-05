@@ -22,6 +22,10 @@ const StyledFooter = styled(RowCentered)`
     & svg:hover {
         fill: ${({theme}) => theme.text1};
     }
+
+    ${({theme}) => theme.media.small`
+        margin-top: 64px;
+    `}
 `
 
 const Footer = () => {

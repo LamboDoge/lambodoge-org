@@ -8,8 +8,8 @@ import Seo from '../components/seo'
 import { PrimaryButton } from '../components/button'
 import TokenData from '../components/tokenData'
 import { RowCentered, Column } from '../components/flexbox'
-import SectionTitle from '../components/sectionTitle'
 import { BlurredCard, VoidCard } from '../components/cards'
+import Section, { SectionTitle } from '../components/section'
 
 import Logo from '../images/logo.inline.svg'
 import StakeIcon from '../images/stake.inline.svg'
@@ -20,18 +20,7 @@ import RedditIcon from '../images/reddit.inline.svg'
 import GithubIcon from '../images/github.inline.svg'
 import Wireframe from '../images/wireframe.inline.svg'
 
-const StyledSection = styled.section`
-    max-width: 1312px;
-    margin: 100px auto 0;
-    padding: 0 4rem;
-
-    ${({theme}) => theme.media.small`
-        padding: 0 1rem;
-        margin-top: 4rem;
-    `}
-`
-
-const HomeSection = styled(StyledSection)`
+const IntroSection = styled(Section)`
     display: flex;
     justify-content: space-between;
     margin-top: 144px;
@@ -111,7 +100,7 @@ const LamboIllustration = styled(Img)`
     flex-shrink: 0;
 `
 
-const TokenDataSection = styled(StyledSection)`
+const TokenDataSection = styled(Section)`
     ${({theme}) => theme.media.small`
         margin: 4rem 0;
     `}
@@ -149,7 +138,7 @@ const IndexPage = (props) => {
                 path={props.location.pathname}
                 description="The new generation of automatic yield tokens"
             />
-            <HomeSection>
+            <IntroSection>
                 <LamboIllustration
                     imgStyle={{ objectFit: 'contain' }}
                     width='582px'
@@ -194,7 +183,7 @@ const IndexPage = (props) => {
                         </a>
                     </SocialLinksWrapper>
                 </div>
-            </HomeSection>
+            </IntroSection>
             <TokenDataSection>
                 <TokenData />
             </TokenDataSection>
@@ -266,7 +255,7 @@ const StyledWireframe = styled(Wireframe)`
 
 const TokenSection = () => {
     return (
-        <StyledSection>
+        <Section>
             <SectionTitle
                 link='https://bscscan.com/address/0xc32c50fa1854d0c8df9032e5887a57aa84783e8a'
                 linkName='VIEW ON BSCSCAN'
@@ -300,7 +289,7 @@ const TokenSection = () => {
                     </BlurredCard>
                 </WireframeWrapper>
             </TokenSectionWrapper>
-        </StyledSection>
+        </Section>
     )
 }
 
@@ -329,7 +318,7 @@ const CardText = styled.p`
 
 const DefiSection = () => {
     return (
-        <StyledSection>
+        <Section>
             <SectionTitle
                 link='https://app.lambodoge.org'
                 linkName='LAUNCH THE APP'
@@ -354,7 +343,7 @@ const DefiSection = () => {
                     </CardText>
                 </VoidCard>
             </CardsWrapper>
-        </StyledSection>
+        </Section>
     )
 }
 

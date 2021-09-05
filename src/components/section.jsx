@@ -1,6 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const Section = styled.section`
+    max-width: 1312px;
+    margin: 100px auto 0;
+    padding: 0 4rem;
+
+    ${({theme}) => theme.media.small`
+        padding: 0 1rem;
+        margin-top: 4rem;
+    `}
+`
+
+export default Section
+
 const StyledSectionTitle = styled.div`
     margin-bottom: 64px;
 
@@ -34,7 +47,7 @@ const StyledSectionTitle = styled.div`
     `}
 `
 
-const SectionTitle = ({children, link = undefined, linkName = undefined}) => {
+export const SectionTitle = ({children, link = undefined, linkName = undefined}) => {
     return (
         <StyledSectionTitle>
             <h2>
@@ -54,5 +67,3 @@ const SectionTitle = ({children, link = undefined, linkName = undefined}) => {
         </StyledSectionTitle>
     )
 }
-
-export default SectionTitle

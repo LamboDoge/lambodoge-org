@@ -31,8 +31,12 @@ const StyledHeader = styled.header`
     `}
 `
 
-const StyledTextLogo = styled(TextLogo)`
+const TextLogoLink = styled(Link)`
     height: 2rem;
+
+    & > svg {
+        height: 2rem;
+    }
 `
 
 const NavTitle = styled(Link)`
@@ -132,7 +136,9 @@ const Header = () => {
 
     return (
         <StyledHeader transparentHeader={isHeaderTransparent} >
-            <StyledTextLogo/>
+            <TextLogoLink to="/" >
+                <TextLogo/>
+            </TextLogoLink>
             <NavLinks
                 open={isMenuOpen}
             >
