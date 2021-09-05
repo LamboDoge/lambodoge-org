@@ -105,7 +105,10 @@ const Header = () => {
         query HeaderComponentQuery {
             site {
                 siteMetadata {
-                    menulinks
+                    menulinks {
+                        name
+                        href
+                    }
                 }
             }
         }
@@ -136,10 +139,10 @@ const Header = () => {
                 {data.site.siteMetadata.menulinks.map((link, index) =>
                     <Link
                         key={`header-link-${index}`}
-                        to={`#${link.toLowerCase()}`}
+                        to={link.href}
                         onClick={closeMenu}
                     >
-                        {link}
+                        {link.name}
                     </Link>
                 )}
             </NavLinks>
