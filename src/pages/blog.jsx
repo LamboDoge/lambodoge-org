@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import Layout from "../layouts"
 import Seo from "../components/seo"
 import BlogCard from '../components/cards/blog'
 import Section, { SectionTitle } from '../components/section'
@@ -57,7 +56,7 @@ export default function Blog() {
     const posts = data.allMdx.edges
 
     return (
-        <Layout>
+        <>
             <Seo
                 title="Blog"
             />
@@ -67,6 +66,6 @@ export default function Blog() {
                     {posts.map((post) => <BlogCard data={post.node} large />)}
                 </BlogCardsWrapper>
             </BlogSection>
-        </Layout>
+        </>
     )
 }

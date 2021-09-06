@@ -3,15 +3,12 @@ import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Layout from '../layouts'
 import Seo from '../components/seo'
-import { PrimaryButton } from '../components/button'
 import TokenData from '../components/tokenData'
-import { RowCentered, Column } from '../components/flexbox'
+import { RowCentered } from '../components/flexbox'
 import { BlurredCard, VoidCard } from '../components/cards'
 import Section, { SectionTitle } from '../components/section'
 
-import Logo from '../images/logo.inline.svg'
 import StakeIcon from '../images/stake.inline.svg'
 import SwapIcon from '../images/swap.inline.svg'
 import TwitterIcon from '../images/twitter.inline.svg'
@@ -132,7 +129,7 @@ const IndexPage = (props) => {
     `)
 
     return (
-        <Layout>
+        <>
             <Seo
                 title="Home"
                 path={props.location.pathname}
@@ -189,7 +186,7 @@ const IndexPage = (props) => {
             </TokenDataSection>
             <TokenSection />
             <DefiSection />
-        </Layout>
+        </>
     )
 }
 

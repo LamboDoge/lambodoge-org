@@ -39,11 +39,6 @@ const TextLogoLink = styled(Link)`
     }
 `
 
-const NavTitle = styled(Link)`
-    color: ${({theme}) => theme.text1};
-    font-weight: 700;
-`
-
 const NavLinks = styled.div`
     display: flex;
     gap: 2rem;

@@ -8,6 +8,9 @@ exports.createPages = async ({ graphql, reporter, actions }) => {
             allMdx {
                 edges {
                     node {
+                        frontmatter {
+                            title
+                        }
                         fields {
                             relativePath
                             slug
@@ -34,7 +37,8 @@ exports.createPages = async ({ graphql, reporter, actions }) => {
             path: node.fields.slug,
             component: require.resolve(`./src/layouts/${layout}.jsx`),
             context: {
-                relativePath: node.fields.relativePath
+                relativePath: node.fields.relativePath,
+                title: node.frontmatter.title
             }
         })
     })

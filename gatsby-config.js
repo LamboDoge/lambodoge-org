@@ -54,12 +54,6 @@ module.exports = {
                 plugins: [ { resolve: `gatsby-remark-images` } ],
             },
         }, {
-            resolve: "gatsby-transformer-remark",
-            options: {
-                plugins: [
-                ]
-            }
-        }, {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,

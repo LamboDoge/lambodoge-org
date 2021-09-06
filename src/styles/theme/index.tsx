@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react'
 import {
-    DefaultTheme,
-    ThemeProvider as StyledThemeProvider,
+    ThemeProvider,
     createGlobalStyle,
     css
 } from 'styled-components'
@@ -40,7 +39,7 @@ export function colors(darkMode: boolean): Colors {
     }
 }
 
-function theme(darkMode: boolean): DefaultTheme {
+function theme(darkMode: boolean) {
     return {
         ...colors(darkMode),
 
@@ -53,19 +52,19 @@ const ThemedGlobalStyle = createGlobalStyle`
         background-color: ${({theme}) => theme.bg1};
     }
 
-    h1, h2, h3, h4, h5, h6, p, a, ul {
+    h1, h2, h3, h4, h5, h6, p, a, ul, ol {
         color: ${({theme}) => theme.text1};
     }
 `
 
-export default function ThemeProvider({children}: {children: React.ReactNode}) {
+export default function StyledThemeProvider({children}) {
     const darkMode = false
     const themeObject = useMemo(() => theme(darkMode), [darkMode])
 
     return (
-        <StyledThemeProvider theme={themeObject} >
+        <ThemeProvider theme={themeObject} >
             <ThemedGlobalStyle />
             {children}
-        </StyledThemeProvider>
+        </ThemeProvider>
     )
 }
