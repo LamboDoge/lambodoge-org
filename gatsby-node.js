@@ -26,16 +26,9 @@ exports.createPages = async ({ graphql, reporter, actions }) => {
     }
 
     result.data.allMdx.edges.forEach(({ node }) => {
-        const slug = node.fields.slug
-        let layout = 'index'
-
-        if (slug.includes('/blog/')) {
-            layout = 'blogPost'
-        }
-
         createPage({
             path: node.fields.slug,
-            component: require.resolve(`./src/layouts/${layout}.jsx`),
+            component: require.resolve(`./src/templates/blogPost.jsx`),
             context: {
                 relativePath: node.fields.relativePath,
                 title: node.frontmatter.title

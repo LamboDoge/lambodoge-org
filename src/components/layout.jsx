@@ -13,7 +13,7 @@ const Layout = ({children}) => {
             <RadialCard/>
             <Header/>
             {children}
-            <Footer />
+            <Footer/>
         </>
     )
 }

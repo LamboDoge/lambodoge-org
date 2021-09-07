@@ -1,6 +1,6 @@
 import React from 'react'
 import { onRenderBody as renderReactHelmet } from 'gatsby-plugin-react-helmet/gatsby-ssr';
-import Layout from './src/layouts'
+import Layout from './src/components/layout'
 import StyledThemeProvider from './src/styles/theme'
 
 export const wrapRootElement = ({ element }) => <StyledThemeProvider>{element}</StyledThemeProvider>;

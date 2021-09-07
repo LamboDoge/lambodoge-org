@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
@@ -147,63 +147,45 @@ const BlogBody = styled.div`
     `}
 `
 
-export default function BlogPost({pageContext, path, location}) {
-    const data = useStaticQuery(graphql`
-        query BlogPostQuery($relativePath: String) {
-            mdx(fields: { relativePath: { eq: $relativePath } }) {
-                body
-            }
-            allMdx(
-                filter: {fileAbsolutePath: {regex: "/blog/"}},
-                sort: {order: DESC, fields: frontmatter___date}
-            ) {
-                edges {
-                    node {
-                        frontmatter {
-                            title
-                            date
-                            banner {
-                                childImageSharp {
-                                    fluid(quality: 100, maxWidth: 1024) {
-                                        ...GatsbyImageSharpFluid
-                                    }
-                                }
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-            }
-        }
-    `)
-
+export default function BlogPost({data, pageContext, location}) {
     return (
         <>
             <Seo
                 title={pageContext.title}
                 path={location.pathname}
             />
-            {data.allMdx.edges
-                .filter(post => post.node.fields.slug === path)
-                .map(({node}) => {
-                    return (
-                        <div key={`blog-post-${path}`} >
-                            <BannerSection>
-                                <Banner fluid={node.frontmatter.banner.childImageSharp.fluid} />
-                            </BannerSection>
-                            <BlogContentSection>
-                                <DateField>{node.frontmatter.date}</DateField>
-                                <Title>{node.frontmatter.title}</Title>
-                                <BlogBody>
-                                    <MDXRenderer>{data.mdx.body}</MDXRenderer>
-                                </BlogBody>
-                            </BlogContentSection>
-                        </div>
-                    )
-                })
-            }
+            <BannerSection>
+                <Banner fluid={data.mdx.frontmatter.banner.childImageSharp.fluid} />
+            </BannerSection>
+            <BlogContentSection>
+                <DateField>{data.mdx.frontmatter.date}</DateField>
+                <Title>{data.mdx.frontmatter.title}</Title>
+                <BlogBody>
+                    <MDXRenderer>{data.mdx.body}</MDXRenderer>
+                </BlogBody>
+            </BlogContentSection>
         </>
     )
 }
+
+export const query = graphql`
+    query BlogPostQuery($relativePath: String) {
+        mdx(fields: { relativePath: { eq: $relativePath } }) {
+            frontmatter {
+                title
+                date
+                banner {
+                    childImageSharp {
+                        fluid(quality: 100, maxWidth: 1024) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
+            fields {
+                slug
+            }
+            body
+        }
+    }
+`

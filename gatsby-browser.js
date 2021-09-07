@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from "./src/layouts"
+import Layout from './src/components/layout'
 import StyledThemeProvider from './src/styles/theme'
 
 export const wrapRootElement = ({ element }) => <StyledThemeProvider>{element}</StyledThemeProvider>;
