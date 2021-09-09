@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 
 import useScrollPosition from '../hooks/useScrollPosition'
 import { PrimaryButton } from '../components/button'

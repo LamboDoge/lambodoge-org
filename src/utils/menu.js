@@ -1,17 +1,3 @@
-const menu = [
-    {
-        name: "Whitepaper",
-        href: "/blog/whitepaper"
-    }, {
-        name: "Roadmap",
-        href: "/blog/roadmap"
-    }, {
-        name: "Team",
-        href: "/team"
-    }, {
-        name: "Blog",
-        href: "/blog"
-    }
-]
+const menuMetadata = require("../data/menu.json")
 
-module.exports = menu
+module.exports = menuMetadata

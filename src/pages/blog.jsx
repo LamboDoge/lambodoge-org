@@ -6,6 +6,7 @@ import Seo from "../components/seo"
 import BlogCard from '../components/cards/blog'
 import Section, { SectionTitle } from '../components/section'
 import { ColumnCentered } from '../components/flexbox'
+import { toAbsoluteSlug } from '../utils/translations'
 
 const BlogSection = styled(Section)`
     max-width: 1024px;
@@ -27,7 +28,7 @@ const BlogCardsWrapper = styled(ColumnCentered)`
     `}
 `
 
-export default function Blog() {
+export default function Blog({pageContext}) {
     const data = useStaticQuery(graphql`
         {
             allMdx(filter: {fileAbsolutePath: {regex: "/blog/"}}, sort: {order: DESC, fields: frontmatter___date}) {
@@ -35,6 +36,7 @@ export default function Blog() {
                     node {
                         frontmatter {
                             title
+                            lang
                             date
                             banner {
                                 childImageSharp {
@@ -54,6 +56,30 @@ export default function Blog() {
     `)
 
     const posts = data.allMdx.edges
+    const postsToDisplay = []
+
+    for (const post of posts) {
+        if (post.node.frontmatter.lang !== pageContext.intl.defaultLanguage) {
+            continue
+        }
+        const fallbackPost = post
+        let foundTranslatedPost = false
+
+        for (const post of posts) {
+            if (post.node.frontmatter.lang !== pageContext.intl.language) {
+                continue
+            }
+
+            if (toAbsoluteSlug(post.node.fields.slug) === toAbsoluteSlug(fallbackPost.node.fields.slug)) {
+                postsToDisplay.push(post)
+                foundTranslatedPost = true
+                break
+            }
+        }
+        if (!foundTranslatedPost) {
+            postsToDisplay.push(fallbackPost)
+        }
+    }
 
     return (
         <>
@@ -63,7 +89,7 @@ export default function Blog() {
             <BlogSection>
                 <SectionTitle>BLOG</SectionTitle>
                 <BlogCardsWrapper>
-                    {posts.map((post) => <BlogCard data={post.node} large />)}
+                    {postsToDisplay.map((post) => <BlogCard data={post.node} large />)}
                 </BlogCardsWrapper>
             </BlogSection>
         </>

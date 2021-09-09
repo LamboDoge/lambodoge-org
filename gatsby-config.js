@@ -1,6 +1,9 @@
 const menu = require('./src/utils/menu');
-
+const translations = require("./src/utils/translations")
 require("dotenv").config();
+
+const supportedLanguages = translations.supportedLanguages
+const defaultLanguage = `en`
 
 module.exports = {
     siteMetadata: {
@@ -9,9 +12,25 @@ module.exports = {
         author: `@LamboDoge`,
         menulinks: menu,
         siteUrl: `https://lambodoge.org`,
+        defaultLanguage,
+        supportedLanguages
     },
     plugins: [
+        // i18n support
         {
+            resolve: `gatsby-plugin-intl`,
+            options: {
+                // language JSON resource path
+                path: `${__dirname}/src/intl`,
+                // supported language
+                languages: supportedLanguages,
+                // language file path
+                defaultLanguage,
+                // redirect to `/${lang}/` when connecting to `/`
+                // based on user's browser language preference
+                redirect: true,
+            },
+        }, {
             resolve: `gatsby-plugin-s3`,
             options: {
                 bucketName: process.env.AWS_S3_BUCKET || 'NOT_SPECIFIED',

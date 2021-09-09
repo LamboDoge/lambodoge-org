@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
-import { Link } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
+
+import { toAbsoluteSlug } from '../../utils/translations'
 
 const StyledBlogCard = styled.div`
     width: 100%;
@@ -50,9 +52,11 @@ const DataField = styled.p`
 `
 
 const BlogCard = ({data, large}) => {
+    const url = toAbsoluteSlug(data.fields.slug)
+
     return (
         <StyledBlogCard>
-            <Link to={data.fields.slug} style={{ width: '100%' }} >
+            <Link to={url} style={{ width: '100%' }} >
                 <Banner fluid={data.frontmatter.banner.childImageSharp.fluid} />
             </Link>
             <BlogTitle to={data.fields.slug} >{data.frontmatter.title}</BlogTitle>
