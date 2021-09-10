@@ -1,13 +1,13 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery, Link as AbsoluteLink } from 'gatsby'
-import { Link } from 'gatsby-plugin-intl'
+import { Link, useIntl } from 'gatsby-plugin-intl'
 
 import useScrollPosition from '../hooks/useScrollPosition'
 import { PrimaryButton } from '../components/button'
 import { RowCentered } from '../components/flexbox'
 import languageMetadata from '../data/translations'
-import { translateMessageId } from "../utils/translations"
+import { translateMessageId } from '../utils/translations'
 
 import MenuIcon from '../images/menu.inline.svg'
 import Logo from '../images/logo.inline.svg'
@@ -246,6 +246,8 @@ const Header = ({pageContext}) => {
         }
     `)
 
+    const intl = useIntl()
+
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isLanguageSelectionOpen, setIsLanguageSelectionOpen] = useState(false)
     const [isHeaderTransparent, setIsHeaderTransparent] = useState(true)
@@ -283,13 +285,13 @@ const Header = ({pageContext}) => {
                         to={link.href}
                         onClick={closeMenu}
                     >
-                        {link.name}
+                        {translateMessageId(link.name, intl)}
                     </Link>
                 )}
                 <LanguagesDropdown
                     onClick={toggleLanguageSelection}
                 >
-                    Language
+                    {translateMessageId('language', intl)}
                     <Carret/>
                 </LanguagesDropdown>
                 <LanguageLinks
@@ -298,7 +300,9 @@ const Header = ({pageContext}) => {
                 />
             </NavLinks>
             <AppLink href='https://app.lambodoge.org' >
-                <PrimaryButton>Use the app</PrimaryButton>
+                <PrimaryButton>
+                    {translateMessageId('use-app', intl)}
+                </PrimaryButton>
             </AppLink>
             <LanguageSelection open={isLanguageSelectionOpen} >
                 <LanguageButton onClick={toggleLanguageSelection} >

@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useIntl } from 'gatsby-plugin-intl'
+import { translateMessageId } from '../utils/translations'
 
 const StyledTokenData = styled.div`
     display: flex;
@@ -39,15 +41,17 @@ const NumberWrapper = styled.div`
 `
 
 const TokenData = () => {
+    const intl = useIntl()
+
     const data = [
         {
-            name: 'MarketCap',
+            name: translateMessageId('mcap', intl),
             value: '$56M'
         }, {
-            name: 'Holders',
+            name: translateMessageId('holders', intl),
             value: '69,400'
         }, {
-            name: 'Liquidity',
+            name: translateMessageId('liquidity', intl),
             value: '$7M'
         }
     ]

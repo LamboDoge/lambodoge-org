@@ -2,12 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import { useIntl } from 'gatsby-plugin-intl'
 
 import Seo from '../components/seo'
 import TokenData from '../components/tokenData'
 import { RowCentered } from '../components/flexbox'
 import { BlurredCard, VoidCard } from '../components/cards'
 import Section, { SectionTitle } from '../components/section'
+import { translateMessageId } from '../utils/translations'
 
 import StakeIcon from '../images/stake.inline.svg'
 import SwapIcon from '../images/swap.inline.svg'
@@ -128,6 +130,8 @@ const IndexPage = (props) => {
         }
     `)
 
+    const intl = useIntl()
+
     return (
         <>
             <Seo
@@ -143,11 +147,11 @@ const IndexPage = (props) => {
                 />
                 <div>
                     <Title>
-                        SWAP <span> | </span> STAKE<br/>
-                        PROVIDE <span> | </span> EARN
+                        {translateMessageId('slogan-top', intl)}<br/>
+                        {translateMessageId('slogan-bottom', intl)}
                     </Title>
                     <Subtitle>
-                        The path between real DeFi innovations, good user experience and aggresive marketing.
+                        {translateMessageId('subtitle', intl)}
                     </Subtitle>
                     <SocialLinksWrapper>
                         <a
@@ -251,36 +255,36 @@ const StyledWireframe = styled(Wireframe)`
 `
 
 const TokenSection = () => {
+    const intl = useIntl()
+
     return (
         <Section>
             <SectionTitle
                 link='https://bscscan.com/address/0xc32c50fa1854d0c8df9032e5887a57aa84783e8a'
-                linkName='VIEW ON BSCSCAN'
+                linkName={translateMessageId('view-bscscan', intl)}
             >
                 TOKEN
             </SectionTitle>
             <TokenSectionWrapper>
                 <div>
-                    <h3>No tax on transfer</h3>
+                    <h3>{translateMessageId('no-tax', intl)}</h3>
                     <p>
-                        LamboDoge doens’t take a tax on each transaction but on each buy or sell,
-                        which lets you manage and use your tokens in a more user friendly way,
-                        and unlock a lot of new scaling possibilities.
+                        {translateMessageId('no-tax-description', intl)}
                     </p>
                 </div>
                 <WireframeWrapper>
                     <StyledWireframe />
                     <BlurredCard style={{ right: '0', top: '40px' }}  >
                         <p>
-                            <span>Tax on buy or sell</span><br/>
-                            1% to reward holders<br/>
-                            1% goes to liquidity<br/>
-                            2% for marketing
+                            <span>{translateMessageId('tax-buy-sell', intl)}</span><br/>
+                            {translateMessageId('tax-holders', intl)}<br/>
+                            {translateMessageId('tax-liquidity', intl)}<br/>
+                            {translateMessageId('tax-marketing', intl)}
                         </p>
                     </BlurredCard>
                     <BlurredCard style={{ left: '0', bottom: '48px' }} >
                         <p>
-                            <span>Max supply</span><br/>
+                            <span>{translateMessageId('max-supply', intl)}</span><br/>
                             100,000,000,000
                         </p>
                     </BlurredCard>
@@ -314,11 +318,13 @@ const CardText = styled.p`
 `
 
 const DefiSection = () => {
+    const intl = useIntl()
+
     return (
         <Section>
             <SectionTitle
                 link='https://app.lambodoge.org'
-                linkName='LAUNCH THE APP'
+                linkName={translateMessageId('launch-app', intl)}
             >
                 DEFI
             </SectionTitle>
@@ -328,7 +334,7 @@ const DefiSection = () => {
                         <SwapIcon/>
                     </IconCardWrapper>
                     <CardText>
-                        Swap any BEP-20 tokens with in the most user friendly way
+                        {translateMessageId('swap-description', intl)}
                     </CardText>
                 </VoidCard>
                 <VoidCard>
@@ -336,7 +342,7 @@ const DefiSection = () => {
                         <StakeIcon/>
                     </IconCardWrapper>
                     <CardText>
-                        Stake your tokens and mine liquidity through multiple pools with highly rewarding APYs
+                        {translateMessageId('stake-description', intl)}
                     </CardText>
                 </VoidCard>
             </CardsWrapper>

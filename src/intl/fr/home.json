@@ -1,0 +1,20 @@
+{
+    "slogan-top": "SWAP | MISE",
+    "slogan-bottom": "FOURNI | GAGNE",
+    "subtitle": "La combinaison de vraies innovations dans le domaine de la finance décentralisée, une bonne experience utilisateur, et un marketing aggresif.",
+    "mcap": "Capitalisation",
+    "holders": "Utilisateurs",
+    "liquidity": "Liquidité",
+    "token": "JETON",
+    "view-bscscan": "VOIR SUR BSCSCAN",
+    "no-tax": "Pas de taxe sur le transfert",
+    "no-tax-description": "Lambodoge ne prend pas de taxe sur chaque transaction, mais sur chaque achat ou vente, ce qui permet de gérer et utiliser ses jetons très facilement et débloque une multitude de nouvelles possibilitiés.",
+    "tax-buy-sell": "Taxe sur l'achat et vente",
+    "tax-holders": "1% redistribué aux utilisateurs",
+    "tax-liquidity": "1% ajouté à la liquidité",
+    "tax-marketing": "2% pour le marketing",
+    "max-supply": "nombre de jetons maximum",
+    "launch-app": "LANCER L'APPLICATION",
+    "swap-description": "Échange très facilement n'importe quel jeton BEP-20",
+    "stake-description": "Mise tes tokens et mine de la liquidité à travers de multiple pools avec un très haut taux de rendement"
+}

@@ -1,15 +1,15 @@
 [
     {
-        "name": "Whitepaper",
+        "name": "whitepaper",
         "href": "/blog/whitepaper"
     }, {
-        "name": "Roadmap",
+        "name": "roadmap",
         "href": "/blog/roadmap"
     }, {
-        "name": "Team",
+        "name": "team",
         "href": "/team"
     }, {
-        "name": "Blog",
+        "name": "blog",
         "href": "/blog"
     }
 ]

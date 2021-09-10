@@ -1,3 +1,8 @@
 {
-    "whitepaper": "Whitepaper"
+    "whitepaper": "Whitepaper",
+    "blog": "Blog",
+    "roadmap": "Roadmap",
+    "team": "Team",
+    "use-app": "Use the app",
+    "language": "Language"
 }
