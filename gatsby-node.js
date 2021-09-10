@@ -149,7 +149,7 @@ exports.createPages = async ({ graphql, reporter, actions }) => {
                     languages: supportedLanguages,
                     messages: getMessages("./src/intl/", language),
                     routed: true,
-                    originalPath: slug.replace(`/${language}`, ''),
+                    originalPath: slug.replace(new RegExp(`^/${language}`, 'g'), ''),
                     redirect: false,
                 }
             }

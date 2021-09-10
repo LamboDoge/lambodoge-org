@@ -19,7 +19,7 @@ const Layout = ({children, pageContext}) => {
         >
             <IntlContextProvider value={intl} >
                 <RadialCard/>
-                <Header/>
+                <Header pageContext={pageContext} />
                 {children}
                 <Footer/>
             </IntlContextProvider>
