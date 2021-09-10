@@ -33,6 +33,7 @@ module.exports = {
         }, {
             resolve: `gatsby-plugin-s3`,
             options: {
+                generateRoutingRules: false,
                 bucketName: process.env.AWS_S3_BUCKET || 'NOT_SPECIFIED',
                 protocol: 'https',
                 hostname: 'lambodoge.org',

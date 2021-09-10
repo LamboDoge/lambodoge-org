@@ -7,11 +7,13 @@ import useScrollPosition from '../hooks/useScrollPosition'
 import { PrimaryButton } from '../components/button'
 import { RowCentered } from '../components/flexbox'
 import languageMetadata from '../data/translations'
+import { translateMessageId } from "../utils/translations"
 
 import MenuIcon from '../images/menu.inline.svg'
 import Logo from '../images/logo.inline.svg'
 import GlobeIcon from '../images/globe.inline.svg'
 import Carret from '../images/caret.inline.svg'
+import TextLogo from '../images/text-logo.inline.svg'
 
 const StyledHeader = styled.header`
     z-index: 99;
@@ -34,6 +36,15 @@ const StyledHeader = styled.header`
     ${({theme}) => theme.media.medium`
         padding: 0 1rem;
         justify-content: space-between;
+    `}
+`
+
+const StyledTextLogo = styled(TextLogo)`
+    display: none;
+    height: 16px;
+
+    ${({theme}) => theme.media.medium`
+        display: initial;
     `}
 `
 
@@ -261,6 +272,7 @@ const Header = ({pageContext}) => {
             <LogoLink to="/" >
                 <Logo/>
             </LogoLink>
+            <StyledTextLogo/>
             <NavLinks
                 open={isMenuOpen}
                 languageOpen={isLanguageSelectionOpen}
