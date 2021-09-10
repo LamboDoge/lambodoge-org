@@ -39,6 +39,8 @@ const StyledSectionTitle = styled.div`
     ${({theme}) => theme.media.extraSmall`
         & > h2 {
             font-size: 2.5rem;
+            line-height: 2.75rem;
+            margin-bottom: 12px
         }
 
         & > a {

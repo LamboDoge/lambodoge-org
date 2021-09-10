@@ -24,6 +24,7 @@ const IntroSection = styled(Section)`
     justify-content: space-between;
     margin-top: 144px;
     gap: 4rem;
+    grid-gap: 4rem;
     align-items: center;
 
     ${({theme}) => theme.media.large`
