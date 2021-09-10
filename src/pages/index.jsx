@@ -31,6 +31,7 @@ const IntroSection = styled(Section)`
         text-align: center;
         margin-bottom: 10rem;
         flex-direction: column-reverse;
+        gap: 0;
     `}
 
     ${({theme}) => theme.media.medium`
@@ -87,6 +88,7 @@ const SocialLinksWrapper = styled.div`
 
     ${({theme}) => theme.media.large`
         justify-content: center;
+        margin-bottom: 4rem;
     `}
 
     ${({theme}) => theme.media.small`
