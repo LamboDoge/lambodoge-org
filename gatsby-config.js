@@ -1,4 +1,4 @@
-const menu = require('./src/utils/menu');
+const menu = require("./src/data/menu.json")
 const translations = require("./src/utils/translations")
 require("dotenv").config();
 

@@ -2,23 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import Seo from "../components/seo"
+import Seo from '../components/seo'
 import BlogCard from '../components/cards/blog'
-import Section, { SectionTitle } from '../components/section'
+import { SmallSection, SectionTitle } from '../components/section'
 import { ColumnCentered } from '../components/flexbox'
 import { toAbsoluteSlug } from '../utils/translations'
-
-const BlogSection = styled(Section)`
-    max-width: 1024px;
-
-    ${({theme}) => theme.media.large`
-        margin-top: 4rem;
-    `}
-
-    ${({theme}) => theme.media.extraSmall`
-        margin-top: 2rem;
-    `}
-`
 
 const BlogCardsWrapper = styled(ColumnCentered)`
     gap: 100px;
@@ -86,12 +74,12 @@ export default function Blog({pageContext}) {
             <Seo
                 title="Blog"
             />
-            <BlogSection>
+            <SmallSection>
                 <SectionTitle>BLOG</SectionTitle>
                 <BlogCardsWrapper>
                     {postsToDisplay.map((post) => <BlogCard data={post.node} large />)}
                 </BlogCardsWrapper>
-            </BlogSection>
+            </SmallSection>
         </>
     )
 }

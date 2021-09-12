@@ -329,7 +329,7 @@ const DefiSection = () => {
                 link='https://app.lambodoge.org'
                 linkName={translateMessageId('launch-app', intl)}
             >
-                DEFI
+                {translateMessageId('defi', intl)}
             </SectionTitle>
             <CardsWrapper>
                 <VoidCard>

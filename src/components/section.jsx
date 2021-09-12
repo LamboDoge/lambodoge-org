@@ -14,6 +14,18 @@ const Section = styled.section`
 
 export default Section
 
+export const SmallSection = styled(Section)`
+    max-width: 1024px;
+
+    ${({theme}) => theme.media.large`
+        margin-top: 4rem;
+    `}
+
+    ${({theme}) => theme.media.extraSmall`
+        margin-top: 2rem;
+    `}
+`
+
 const StyledSectionTitle = styled.div`
     margin-bottom: 64px;
 
@@ -55,7 +67,7 @@ export const SectionTitle = ({children, link = undefined, linkName = undefined})
             <h2>
                 <span>LAMBODOGE</span>
                 {' '}
-                {children}
+                {children.toUpperCase()}
             </h2>
             {link && linkName &&
                 <a
@@ -63,7 +75,7 @@ export const SectionTitle = ({children, link = undefined, linkName = undefined})
                     target='_blank'
                     rel='noreferrer'
                 >
-                    {linkName} →
+                    {linkName.toUpperCase()} →
                 </a>
             }
         </StyledSectionTitle>
