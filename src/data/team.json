@@ -1,22 +1,22 @@
 [
     {
         "name": "Aventadoge",
-        "title": "Solidity developer",
+        "title": "aventadoge-title",
         "twitterUsername": "allcolorg",
         "telegramUsername": "LamboAventadoge"
     }, {
         "name": "NegativeHoro",
-        "title": "React.js developer / Designer",
+        "title": "negativehoro-title",
         "twitterUsername": "0xnegativehoro",
         "telegramUsername": "NegativeHoro"
     }, {
         "name": "Macled",
-        "title": "Python developer",
+        "title": "macled-title",
         "twitterUsername": "_Macled",
-        "telegramUsername": "Labalabidabidou"
+        "telegramUsername": "macled"
     }, {
         "name": "Murciélago",
-        "title": "Growth hacker",
+        "title": "murcielago-title",
         "twitterUsername": "Mugiwara_crypto",
         "telegramUsername": "LamboMurcielagoDoge"
     }

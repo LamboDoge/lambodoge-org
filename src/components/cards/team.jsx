@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
+import { useIntl } from 'gatsby-plugin-intl'
 
 import { RowCentered } from '../flexbox'
+import { translateMessageId } from '../../utils/translations'
 
 import TwitterIcon from '../../images/twitter.inline.svg'
 import TelegramIcon from '../../images/telegram.inline.svg'
@@ -42,11 +44,13 @@ const SocialLinksWrapper = styled(RowCentered)`
 `
 
 const TeamCard = ({data}) => {
+    const intl = useIntl()
+
     return (
         <StyledTeamCard>
             <Avatar fluid={data.avatar.childImageSharp.fluid} />
             <MemberName>{data.name}</MemberName>
-            <MemberTitle>{data.title}</MemberTitle>
+            <MemberTitle>{translateMessageId(data.title, intl)}</MemberTitle>
             <SocialLinksWrapper>
                 {data.twitterUsername &&
                     <a
