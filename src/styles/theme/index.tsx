@@ -31,11 +31,16 @@ export function colors(darkMode: boolean): Colors {
         black: '#000000',
 
         primary1: '#EF0044',
+        primary2: '#4518F9',
 
         bg1: '#11131E',
+        bg2: '#00000080',
 
         text1: '#F7F7F7',
         text2: '#8E8DA4',
+
+        green: '#00E175',
+        red: '#EF0044'
     }
 }
 

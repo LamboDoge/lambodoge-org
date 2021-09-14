@@ -5,11 +5,16 @@ export interface Colors {
     black: string,
 
     primary1: string,
+    primary2: string,
 
     bg1: string,
+    bg2: string,
 
     text1: string,
-    text2: string
+    text2: string,
+
+    green: string,
+    red: string
 }
 
 declare module 'styled-components' {

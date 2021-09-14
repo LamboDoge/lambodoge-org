@@ -4,6 +4,7 @@ import { IntlProvider, IntlContextProvider } from 'gatsby-plugin-intl'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { RadialCard } from '../components/utils'
+import Mdx from '../components/mdx'
 
 import '../styles/layout.css'
 import '../styles/fonts.css'
@@ -20,7 +21,7 @@ const Layout = ({children, pageContext}) => {
             <IntlContextProvider value={intl} >
                 <RadialCard/>
                 <Header pageContext={pageContext} />
-                {children}
+                <Mdx>{children}</Mdx>
                 <Footer/>
             </IntlContextProvider>
         </IntlProvider>
