@@ -2,7 +2,10 @@ import React, { useState, useMemo } from 'react'
 import styled from 'styled-components'
 import { Slider } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
-import Tooltip from '@material-ui/core/Tooltip';
+import Tooltip from '@material-ui/core/Tooltip'
+import { useIntl } from 'gatsby-plugin-intl'
+
+import { translateMessageId } from '../../utils/translations'
 
 import { RowCentered, Column } from '../flexbox'
 
@@ -35,19 +38,17 @@ const Wrapper = styled.div`
     display: grid;
     row-gap: 24px;
     grid-row-gap: 24px;
-    grid-template: auto / 180px auto;
+    grid-template: auto / 250px auto;
     border-radius: 8px;
     border: 1px solid ${({theme}) => theme.text1};
     padding: 1rem 2rem;
     margin: 2rem 0;
     background: ${({theme}) => theme.bg2};
 
-    ${({theme}) => theme.media.extraSmall`
-        grid-template: auto / auto;
-    `}
-
     ${({theme}) => theme.media.small`
         padding: 1rem 1.5rem;
+        grid-template: auto / auto;
+        grid-gap: 2rem;
     `}
 
     & ${Tax} {
@@ -141,6 +142,8 @@ const Action = {
 }
 
 const TaxSimulator = () => {
+    const intl = useIntl()
+
     const [selectedAction, setSelectedAction] = useState(Action.Buy)
     const [priceImpact, setPriceImpact] = useState(0)
 
@@ -227,41 +230,41 @@ const TaxSimulator = () => {
     return (
         <Wrapper>
             <div>
-                <Title>Tax</Title>
+                <Title>{translateMessageId('tax', intl)}</Title>
                 <Tax>{(Object.keys(tax)).reduce((acc, cur) => acc + tax[cur], 0)}%</Tax>
             </div>
             <Column>
-                 <Title>Tax repartition</Title>
+                 <Title>{translateMessageId('tax-repartition', intl)}</Title>
                 <RowCentered justify="space-between" style={{ flexGrow: 1 }} >
                     <div>
-                        <Subtitle>Holders</Subtitle>
+                        <Subtitle>{translateMessageId('holders', intl)}</Subtitle>
                         <Percentage>{tax?.holders ?? 0}%</Percentage>
                     </div>
                     <div>
-                        <Subtitle>Liquidity</Subtitle>
+                        <Subtitle>{translateMessageId('liquidity', intl)}</Subtitle>
                         <Percentage>{tax?.liquidity ?? 0}%</Percentage>
                     </div>
                     <div>
-                        <Subtitle>Marketing</Subtitle>
+                        <Subtitle>{translateMessageId('marketing', intl)}</Subtitle>
                         <Percentage>{tax?.marketing ?? 0}%</Percentage>
                     </div>
                 </RowCentered>
             </Column>
             <div>
-                <Title>Select action</Title>
+                <Title>{translateMessageId('select-action', intl)}</Title>
                 <RowCentered gap="2rem" >
                     <BuyButton
                         {...(selectedAction === Action.Buy && {active: true})}
                         onClick={() => setSelectedAction(Action.Buy)}
-                    >Buy</BuyButton>
+                    >{translateMessageId('buy', intl)}</BuyButton>
                     <SellButton
                         {...(selectedAction === Action.Sell && {active: true})}
                         onClick={() => setSelectedAction(Action.Sell)}
-                    >Sell</SellButton>
+                    >{translateMessageId('sell', intl)}</SellButton>
                 </RowCentered>
             </div>
             <div>
-                <Title>Select price impact</Title>
+                <Title>{translateMessageId('select-price-impact', intl)}</Title>
                 <SliderWrapper>
                     <StyledSlider
                         onChange={handlePriceImpactChange}
