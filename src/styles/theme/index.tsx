@@ -60,6 +60,13 @@ const ThemedGlobalStyle = createGlobalStyle`
     h1, h2, h3, h4, h5, h6, p, a, ul, ol {
         color: ${({theme}) => theme.text1};
     }
+
+    code {
+        background: ${({theme}) => theme.text2}40;
+        padding: 0 0.25rem;
+        border-radius: 0.25rem;
+        font-size: 16px;
+    }
 `
 
 export default function StyledThemeProvider({children}) {

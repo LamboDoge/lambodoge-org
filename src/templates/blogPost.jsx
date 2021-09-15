@@ -121,7 +121,7 @@ const BlogBody = styled.div`
         height: 1.5rem;
     }
 
-    & h1:hover .anchor {
+    & h2:hover .anchor, & h1:hover .anchor {
         opacity: 1;
     }
 
