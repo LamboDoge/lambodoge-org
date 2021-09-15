@@ -15,7 +15,7 @@ const Section = styled.section`
 export default Section
 
 export const SmallSection = styled(Section)`
-    max-width: 1024px;
+    max-width: 1024px !important;
 
     ${({theme}) => theme.media.large`
         margin-top: 4rem;
