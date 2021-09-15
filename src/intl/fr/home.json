@@ -6,7 +6,7 @@
     "token": "jeton",
     "view-bscscan": "voir sur bscscan",
     "no-tax": "Pas de taxe sur le transfert",
-    "no-tax-description": "Lambodoge ne prend pas de taxe sur chaque transaction, mais sur chaque achat ou vente, ce qui permet de gérer et utiliser ses jetons très facilement et débloque une multitude de nouvelles possibilitiés.",
+    "no-tax-description": "LamboDoge ne taxe pas chaque transaction, mais uniquement chaque achat ou vente, ce qui permet de gérer et utiliser ses jetons très facilement et débloque une multitude de nouvelles possibilités.",
     "tax-buy-sell": "Taxe sur l'achat et vente",
     "tax-holders": "1% redistribué aux utilisateurs",
     "tax-liquidity": "1% ajouté à la liquidité",
