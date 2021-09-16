@@ -77,7 +77,12 @@ export default function Blog({pageContext}) {
             <SmallSection>
                 <SectionTitle>BLOG</SectionTitle>
                 <BlogCardsWrapper>
-                    {postsToDisplay.map((post) => <BlogCard data={post.node} large />)}
+                    {postsToDisplay.map((post, index) =>
+                        <BlogCard
+                            key={`blog-post-${index}`}
+                            data={post.node} large
+                        />
+                    )}
                 </BlogCardsWrapper>
             </SmallSection>
         </>

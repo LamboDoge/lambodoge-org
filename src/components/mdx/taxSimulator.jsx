@@ -98,7 +98,7 @@ const StyledSlider = withStyles({
     thumb: {
         height: '1rem',
         width: '1rem',
-        '&:focus, &:hover, &$active': {
+        '&:focus, &:hover': {
             boxShadow: 'inherit',
         },
     },
@@ -119,7 +119,7 @@ const StyledTooltip = withStyles({
         fontFamily: "'Inter', sans-serif",
         fontWeight: 400,
         textAlign: 'center',
-        ['@media (min-width:780px)']: {
+        ['@media (min-width:780px)']: { // eslint-disable-line no-useless-computed-key
             minWidth: 50,
         }
     },
@@ -155,65 +155,23 @@ const TaxSimulator = () => {
         return `${value}%`
     }
 
-    const data = {
-        [Action.Buy]: {
-            [0]: {
-                holders: 1,
-                liquidity: 1,
-                marketing: 2
-            },
-            [3]: {
-                holders: 2,
-                liquidity: 2,
-                marketing: 4
-            },
-            [5]: {
-                holders: 4,
-                liquidity: 2,
-                marketing: 4
-            },
-            [8]: {
-                holders: 4,
-                liquidity: 4,
-                marketing: 6
-            },
-            [11]: {
-                holders: 5,
-                liquidity: 5,
-                marketing: 8
-            }
-        },
-        [Action.Sell]: {
-            [0]: {
-                holders: 1,
-                liquidity: 1,
-                marketing: 2
-            },
-            [2]: {
-                holders: 2,
-                liquidity: 2,
-                marketing: 4
-            },
-            [3]: {
-                holders: 4,
-                liquidity: 2,
-                marketing: 4
-            },
-            [5]: {
-                holders: 8,
-                liquidity: 4,
-                marketing: 4
-            },
-            [8]: {
-                holders: 10,
-                liquidity: 4,
-                marketing: 6
-            },
-
-        }
-    }
-
     const tax = useMemo(() => {
+        const data = {
+            [Action.Buy]: {
+                0: {holders: 1, liquidity: 1, marketing: 2},
+                3: {holders: 2, liquidity: 2, marketing: 4},
+                5: {holders: 4, liquidity: 2, marketing: 4},
+                8: {holders: 4, liquidity: 4, marketing: 6},
+                11: {holders: 5, liquidity: 5, marketing: 8}
+            },
+            [Action.Sell]: {
+                0: {holders: 1, liquidity: 1, marketing: 2},
+                2: {holders: 2, liquidity: 2, marketing: 4},
+                3: {holders: 4, liquidity: 2, marketing: 4},
+                5: {holders: 8, liquidity: 4, marketing: 4},
+                8: {holders: 10, liquidity: 4, marketing: 6},
+            }
+        }
         let tax
         let minKey = -1
 
