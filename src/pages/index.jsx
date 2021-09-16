@@ -158,7 +158,7 @@ const IndexPage = (props) => {
                     </Subtitle>
                     <SocialLinksWrapper>
                         <a
-                            href='https://twitter.com'
+                            href='https://twitter.com/0xLamboDoge'
                             target='_blank'
                             rel='noreferrer'
                         >
@@ -172,7 +172,7 @@ const IndexPage = (props) => {
                             <TelegramIcon />
                         </a>
                         <a
-                            href='https://reddit.com'
+                            href='https://reddit.com/r/0xLamboDoge/'
                             target='_blank'
                             rel='noreferrer'
                         >
