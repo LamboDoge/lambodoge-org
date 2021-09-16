@@ -12,6 +12,7 @@ const StyledFooter = styled(RowCentered)`
     height: 5.5rem;
     margin-top: 100px;
     gap: 2rem;
+    grid-gap: 2rem;
     justify-content: center;
 
     & svg {
@@ -32,21 +33,21 @@ const Footer = () => {
     return (
         <StyledFooter>
             <a
-                href='https://twitter.com'
+                href='https://twitter.com/0xLamboDoge'
                 target='_blank'
                 rel='noreferrer'
             >
                 <TwitterIcon />
             </a>
             <a
-                href='https://t.me'
+                href='https://t.me/LamboDogeEN'
                 target='_blank'
                 rel='noreferrer'
             >
                 <TelegramIcon />
             </a>
             <a
-                href='https://reddit.com'
+                href='https://reddit.com/r/0xLamboDoge/'
                 target='_blank'
                 rel='noreferrer'
             >
