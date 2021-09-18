@@ -4,22 +4,28 @@ import { useIntl } from 'gatsby-plugin-intl'
 
 import { translateMessageId } from '../utils/translations'
 
+const ComingSoon = styled.h1`
+    width: 100%;
+    text-align: center;
+    margin: 0 0 2rem;
+
+    ${({theme}) => theme.media.small`
+        font-size: 3rem;
+        line-height: 4rem;
+    `}
+`
+
 const StyledCountdown = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 1rem 2rem;
 
-    ${({theme}) => theme.media.small`
+    ${({theme}) => theme.media.extraSmall`
         padding: 0 1rem;
+        grid-template-columns: repeat(2, 1fr);
     `}
-`
-
-const ComingSoon = styled.h1`
-    flex-grow: 1;
-    width: 100%;
-    text-align: center;
-    margin: 0 0 2rem;
 `
 
 const NumberWrapper = styled.div`
@@ -90,25 +96,27 @@ const Countdown = () => {
     }, [timeLeft]);
 
     return (
-        <StyledCountdown>
+        <>
             <ComingSoon>{translateMessageId('coming-soon', intl)}</ComingSoon>
-            <NumberWrapper>
-                <h2>{timeLeft.days}</h2>
-                <p>{translateMessageId('days', intl)}</p>
-            </NumberWrapper>
-            <NumberWrapper>
-                <h2>{timeLeft.hours}</h2>
-                <p>{translateMessageId('hours', intl)}</p>
-            </NumberWrapper>
-            <NumberWrapper>
-                <h2>{timeLeft.minutes}</h2>
-                <p>{translateMessageId('minutes', intl)}</p>
-            </NumberWrapper>
-            <NumberWrapper>
-                <h2>{timeLeft.seconds}</h2>
-                <p>{translateMessageId('seconds', intl)}</p>
-            </NumberWrapper>
-        </StyledCountdown>
+            <StyledCountdown>
+                <NumberWrapper>
+                    <h2>{timeLeft.days}</h2>
+                    <p>{translateMessageId('days', intl)}</p>
+                </NumberWrapper>
+                <NumberWrapper>
+                    <h2>{timeLeft.hours}</h2>
+                    <p>{translateMessageId('hours', intl)}</p>
+                </NumberWrapper>
+                <NumberWrapper>
+                    <h2>{timeLeft.minutes}</h2>
+                    <p>{translateMessageId('minutes', intl)}</p>
+                </NumberWrapper>
+                <NumberWrapper>
+                    <h2>{timeLeft.seconds}</h2>
+                    <p>{translateMessageId('seconds', intl)}</p>
+                </NumberWrapper>
+            </StyledCountdown>
+        </>
     );
 }
 
