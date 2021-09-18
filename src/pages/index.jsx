@@ -6,6 +6,7 @@ import { useIntl } from 'gatsby-plugin-intl'
 
 import Seo from '../components/seo'
 import TokenData from '../components/tokenData'
+import Countdown from '../components/countdown'
 import { RowCentered } from '../components/flexbox'
 import { BlurredCard, VoidCard } from '../components/cards'
 import Section, { SectionTitle } from '../components/section'
@@ -189,7 +190,7 @@ const IndexPage = (props) => {
                 </div>
             </IntroSection>
             <TokenDataSection>
-                <TokenData />
+                <Countdown />
             </TokenDataSection>
             <TokenSection />
             <DefiSection />

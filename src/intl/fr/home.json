@@ -15,5 +15,10 @@
     "defi": "Defi",
     "launch-app": "lance l'application",
     "swap-description": "Échange très facilement n'importe quel jeton BEP-20",
-    "stake-description": "Mise tes tokens et mine de la liquidité à travers de multiple pools avec un très haut taux de rendement"
+    "stake-description": "Mise tes tokens et mine de la liquidité à travers de multiple pools avec un très haut taux de rendement",
+    "days": "Jours",
+    "hours": "Heures",
+    "minutes": "Minutes",
+    "seconds": "Secondes",
+    "coming-soon": "Bientôt disponible"
 }

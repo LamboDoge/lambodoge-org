@@ -15,5 +15,10 @@
     "defi": "Defi",
     "launch-app": "launch the app",
     "swap-description": "Swap any BEP-20 tokens with in the most user friendly way",
-    "stake-description": "Stake your tokens and mine liquidity through multiple pools with highly rewarding APYs"
+    "stake-description": "Stake your tokens and mine liquidity through multiple pools with highly rewarding APYs",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "coming-soon": "Coming soon"
 }
