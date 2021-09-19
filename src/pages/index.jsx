@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
@@ -19,6 +19,8 @@ import TelegramIcon from '../images/telegram.inline.svg'
 import RedditIcon from '../images/reddit.inline.svg'
 import GithubIcon from '../images/github.inline.svg'
 import Wireframe from '../images/wireframe.inline.svg'
+
+const LAUNCH_DATE = +new Date(1632081600000)
 
 const IntroSection = styled(Section)`
     display: flex;
@@ -136,6 +138,8 @@ const IndexPage = (props) => {
 
     const intl = useIntl()
 
+    const [isLaunched, setIsLaunched] = useState(+new Date() >= LAUNCH_DATE)
+
     return (
         <>
             <Seo
@@ -190,7 +194,10 @@ const IndexPage = (props) => {
                 </div>
             </IntroSection>
             <TokenDataSection>
-                <Countdown />
+                {isLaunched
+                  ? <TokenData />
+                : <Countdown date={LAUNCH_DATE} onLaunch={() => setIsLaunched(true)} />
+                }
             </TokenDataSection>
             <TokenSection />
             <DefiSection />

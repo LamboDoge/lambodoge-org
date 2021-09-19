@@ -60,9 +60,9 @@ const NumberWrapper = styled.div`
     `}
 `
 
-const Countdown = () => {
+const Countdown = ({date, onLaunch}) => {
     const calculateTimeLeft = () => {
-        let difference = +new Date(1632081600000) - +new Date()
+        let difference = +date - +new Date()
 
         if (difference > 0) {
             return {
@@ -95,24 +95,28 @@ const Countdown = () => {
         // when we update it
     }, [timeLeft]);
 
+    if (!timeLeft) {
+      onLaunch()
+    }
+
     return (
         <>
             <ComingSoon>{translateMessageId('coming-soon', intl)}</ComingSoon>
             <StyledCountdown>
                 <NumberWrapper>
-                    <h2>{timeLeft.days}</h2>
+                    <h2>{timeLeft?.days ?? 0}</h2>
                     <p>{translateMessageId('days', intl)}</p>
                 </NumberWrapper>
                 <NumberWrapper>
-                    <h2>{timeLeft.hours}</h2>
+                    <h2>{timeLeft?.hours ?? 0}</h2>
                     <p>{translateMessageId('hours', intl)}</p>
                 </NumberWrapper>
                 <NumberWrapper>
-                    <h2>{timeLeft.minutes}</h2>
+                    <h2>{timeLeft?.minutes ?? 0}</h2>
                     <p>{translateMessageId('minutes', intl)}</p>
                 </NumberWrapper>
                 <NumberWrapper>
-                    <h2>{timeLeft.seconds}</h2>
+                    <h2>{timeLeft?.seconds ?? 0}</h2>
                     <p>{translateMessageId('seconds', intl)}</p>
                 </NumberWrapper>
             </StyledCountdown>
