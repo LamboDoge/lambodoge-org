@@ -6,7 +6,7 @@
     "token": "token",
     "view-bscscan": "view on bscscan",
     "no-tax": "No tax on transfer",
-    "no-tax-description": "LamboDoge doens’t take a tax on each transaction but on each buy or sell, which lets you manage and use your tokens in a more user friendly way, and unlock a lot of new scaling possibilities.",
+    "no-tax-description": "LamboDoge doesn’t take a tax on each transaction but on each buy or sell, which lets you manage and use your tokens in a more user friendly way, and unlock a lot of new scaling possibilities.",
     "tax-buy-sell": "Tax on buy or sell",
     "tax-holders": "1% to reward holders",
     "tax-liquidity": "1% goes to liquidity",
