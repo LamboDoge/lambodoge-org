@@ -97,6 +97,7 @@ const Countdown = ({date, onLaunch}) => {
 
     if (!timeLeft) {
       onLaunch()
+      return null
     }
 
     return (
