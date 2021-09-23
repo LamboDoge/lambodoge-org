@@ -9,7 +9,7 @@ lang: 'en'
 
 LamboSwap is the decentralised application developed by the LamboDoge project. At the moment of writing this, LamboSwap allows to swap BEP-20 tokens, add or remove liquidity, and stake tokens into multiple pools.
 
-In this post, I'll explain how each of the application works, in order to offer you the best possible user experience.
+In this post, I'll explain how each menu of the application works, in order to offer you the best possible user experience.
 
 ---
 
@@ -19,7 +19,7 @@ In this post, I'll explain how each of the application works, in order to offer 
 
 ### Automated Market Maker
 
-LamboSwap's swap follows the Automated Market Maker (AMM) approach. Each pair is represented by a liquidity pool, 2 stocks of assets whose value is identical. For example the pair `LDOGE/BNB` holds a stock of `LDOGE` and a stock of `BNB`, the price of `LDOGE` in `BNB` will be calculated based on the principle that the quantity of `LDOGE` in the pool had the same value that the quantité of `BNB` in this same pool.
+LamboSwap's swap follows the Automated Market Maker (AMM) approach. Each pair is represented by a liquidity pool, 2 stocks of assets whose value is identical. For example the pair `LDOGE/BNB` holds a stock of `LDOGE` and a stock of `BNB`, the price of `LDOGE` in `BNB` will be calculated based on the principle that the quantity of `LDOGE` in the pool had the same value that the quantity of `BNB` in this same pool.
 
 A pool `LDOGE/BNB` with `1000 LDOGE` and `10 BNB` would means that `1000 LDOGE` is worth `10 BNB`. So `1 LDOGE` is worth `0.01 BNB`.
 
@@ -39,7 +39,7 @@ Multihops allows to exchange any tokens, even if no pair exists between these 2 
 
 ### Slippage tolerance
 
-When performing a swap, the interface display the quantity of tokens which will be received. However, if the token applies a tax or a trade modify the price right before the confirmation of your transaction, the displayed quantity may vary from the received the received quantity. If the difference in amount exceeds the slippage tolerance, the transaction will be reverted.
+When performing a swap, the interface displays the quantity of tokens which will be received. However, if the token applies a tax or a trade modify the price right before the confirmation of your transaction, the displayed quantity may vary from the received quantity. If the difference in amount exceeds the slippage tolerance, the transaction will be reverted.
 
 For example, for a token applying a 4% tax, slippage tolerance must be at least 4%.
 
@@ -49,7 +49,7 @@ The swapping interface is quite intuitive. Just select:
 
 - An input token
 - An output token
-- An output to send or to receive
+- An output amount to send or to receive
 
 If your balance is sufficient, the transaction can be confirmed.
 
@@ -59,7 +59,7 @@ If your balance is sufficient, the transaction can be confirmed.
 
 For a more advanced use, it's possible to adjust some parameters:
 
-- The **slippage tolérance**, 5% by défaut.
+- The **slippage tolerance**, 5% by default.
 - The **transaction deadline**, if a swap has been pending for longer than this parameter, it will be automatically cancelled, 30 minutes by default.
 - The **multihops** autorisation, enabled by default.
 - The **expert mode**, disabled by default.
@@ -115,9 +115,7 @@ You supplied liquidity, and now wants to get your tokens back. The protocol will
 
 <Video option="RemoveLiquidityDemo" description="Demonstration of the liquidity withdrawing interface" />
 
-If the pool where you have added your liquidity doesn't appear on the interface,
-
-Si la pool dans laquelle vous avez ajouté votre liquidité n’apparaît par sur l'interface, just import it using the **Import pool** button.
+If the pool where you have added your liquidity doesn't appear on the interface, just import it using the **Import pool** button.
 
 ---
 
