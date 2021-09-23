@@ -71,6 +71,12 @@ const BlogBody = styled.div`
         line-height: 1;
     }
 
+    & h3 {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1;
+    }
+
     & ul, & ol {
         color: ${({theme}) => theme.text1};
     }
@@ -121,7 +127,7 @@ const BlogBody = styled.div`
         height: 1.5rem;
     }
 
-    & h2:hover .anchor, & h1:hover .anchor {
+    & h1:hover .anchor, & h2:hover .anchor, & h3:hover .anchor {
         opacity: 1;
     }
 
@@ -143,6 +149,10 @@ const BlogBody = styled.div`
 
         & h2 {
             font-size: 1.25rem;
+        }
+
+        & h3 {
+            font-size: 1rem;
         }
     `}
 `

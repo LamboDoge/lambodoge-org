@@ -196,7 +196,7 @@ const IndexPage = (props) => {
             <TokenDataSection>
                 {isLaunched
                   ? <TokenData />
-                : <Countdown date={LAUNCH_DATE} onLaunch={() => setIsLaunched(true)} />
+                  : <Countdown date={LAUNCH_DATE} onLaunch={() => setIsLaunched(true)} />
                 }
             </TokenDataSection>
             <TokenSection />
