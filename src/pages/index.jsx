@@ -271,8 +271,8 @@ const TokenSection = () => {
     return (
         <Section>
             <SectionTitle
-                link='https://bscscan.com/address/0xc32c50fa1854d0c8df9032e5887a57aa84783e8a'
-                linkName={translateMessageId('view-bscscan', intl)}
+                link='https://www.dextools.io/app/bsc/pair-explorer/0xb66e2ebc4d6ce4f07760f26df6e67406d0ef8090'
+                linkName={translateMessageId('view-chart', intl)}
             >
                 TOKEN
             </SectionTitle>
