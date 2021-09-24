@@ -98,8 +98,8 @@ module.exports = {
                 name: `LamboDoge Website`,
                 short_name: `lamboDoge`,
                 start_url: `/`,
-                background_color: `#E100BD`,
-                theme_color: `#E100BD`,
+                background_color: `#EF0044`,
+                theme_color: `#EF0044`,
                 display: `minimal-ui`,
                 icon: `src/images/lambodoge-icon.png`
             },
