@@ -59,7 +59,7 @@ const BlogCard = ({data, large}) => {
             <Link to={url} style={{ width: '100%' }} >
                 <Banner fluid={data.frontmatter.banner.childImageSharp.fluid} />
             </Link>
-            <BlogTitle to={data.fields.slug} >{data.frontmatter.title}</BlogTitle>
+            <BlogTitle to={url} >{data.frontmatter.title}</BlogTitle>
             <DataField>{data.frontmatter.date}</DataField>
         </StyledBlogCard>
     )
