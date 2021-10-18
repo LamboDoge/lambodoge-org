@@ -1,9 +1,9 @@
 {
-  "name": "lambodoge-net",
+  "name": "legato-finance",
   "version": "1.0.0",
   "private": true,
-  "description": "lambodoge-net",
-  "author": "LamboLabs",
+  "description": "legato-finance",
+  "author": "LegatoLabs",
   "keywords": [
     "gatsby"
   ],

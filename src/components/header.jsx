@@ -13,10 +13,9 @@ import MenuIcon from '../images/menu.inline.svg'
 import Logo from '../images/logo.inline.svg'
 import GlobeIcon from '../images/globe.inline.svg'
 import Carret from '../images/caret.inline.svg'
-import TextLogo from '../images/text-logo.inline.svg'
 
 const StyledHeader = styled.header`
-    z-index: 99;
+    z-index: 9999;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -39,9 +38,9 @@ const StyledHeader = styled.header`
     `}
 `
 
-const StyledTextLogo = styled(TextLogo)`
+const StyledTextLogo = styled.h3`
     display: none;
-    height: 16px;
+    font-size: 20px;
 
     ${({theme}) => theme.media.medium`
         display: initial;
@@ -274,7 +273,7 @@ const Header = ({pageContext}) => {
             <LogoLink to="/" >
                 <Logo/>
             </LogoLink>
-            <StyledTextLogo/>
+            <StyledTextLogo>Legato</StyledTextLogo>
             <NavLinks
                 open={isMenuOpen}
                 languageOpen={isLanguageSelectionOpen}

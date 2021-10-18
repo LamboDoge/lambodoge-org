@@ -65,7 +65,7 @@ export const SectionTitle = ({children, link = undefined, linkName = undefined})
     return (
         <StyledSectionTitle>
             <h2>
-                <span>LAMBODOGE</span>
+                <span>LEGATO</span>
                 {' '}
                 {children.toUpperCase()}
             </h2>

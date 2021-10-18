@@ -1,13 +1,13 @@
 ---
-title: "Introduction à la DeFi avec LamboSwap"
+title: "Introduction à la DeFi avec LegatoSwap"
 date: '2021-09-21'
 banner: ./banner.png
 lang: 'fr'
 ---
 
-# Qu'est ce que LamboSwap?
+# Qu'est ce que LegatoSwap?
 
-LamboSwap est l'application décentralisée développé par le projet LamboDoge. Au moment de l'écriture de cet article, LamboSwap permet de swapper des tokens BEP-20, ajouter ou retirer de la liquidité, et staker des tokens dans différentes pools.
+LegatoSwap est l'application décentralisée développé par le projet Legato. Au moment de l'écriture de cet article, LegatoSwap permet de swapper des tokens BEP-20, ajouter ou retirer de la liquidité, et staker des tokens dans différentes pools.
 
 Dans cet article, je vais expliquer le fonctionnement de chaque menu de l'application, afin de vous offrir la meilleure experience utilisateur possible.
 
@@ -19,7 +19,7 @@ Dans cet article, je vais expliquer le fonctionnement de chaque menu de l'applic
 
 ### Automated Market Maker
 
-Le swap de LamboSwap fonctionne sur le model de l'Automated Market Maker (AMM). Chaque paire est représentée par une pool de liquidité, un stock de 2 actifs dont la valeur est identique. Par exemple la paire `LDOGE/BNB` détient un stock de `LDOGE` ainsi qu'un stock de `BNB`, le prix du `LDOGE` en `BNB` sera alors calculé en partant du principe que la quantité de `LDOGE` dans la pool a la même valeur que la quantité de `BNB` dans cette même pool.
+Le swap de LegatoSwap fonctionne sur le model de l'Automated Market Maker (AMM). Chaque paire est représentée par une pool de liquidité, un stock de 2 actifs dont la valeur est identique. Par exemple la paire `LDOGE/BNB` détient un stock de `LDOGE` ainsi qu'un stock de `BNB`, le prix du `LDOGE` en `BNB` sera alors calculé en partant du principe que la quantité de `LDOGE` dans la pool a la même valeur que la quantité de `BNB` dans cette même pool.
 
 Une pool `LDOGE/BNB` avec `1000 LDOGE` et `10 BNB` signifierait que `1000 LDOGE` valent `10 BNB`. Donc `1 LDOGE` vaut `0.01 BNB`.
 
@@ -27,7 +27,7 @@ Une pool `LDOGE/BNB` avec `1000 LDOGE` et `10 BNB` signifierait que `1000 LDOGE`
 
 En gardant l'exemple de la pool `LDOGE/BNB`, si un utilisateur désire swapper ses `BNB` contre des `LDOGE`, il va en réalité déposer ses `BNB` dans la pool et prendre des `LDOGE` en échange. Cette action a pour effet de changer le prix du `LDOGE`, puisque le ratio `LDOGE` `BNB` dans la pool n'est plus le même.
 
-![LamboSwap AMM](amm.png)
+![LegatoSwap AMM](amm.png)
 
 Plus la quantité échangée est importante, plus le ratio va changer, et donc plus prix va changer aussi. C'est ce taux de changement du prix que l'on appelle le **price impact**.
 
@@ -35,7 +35,7 @@ Plus la quantité échangée est importante, plus le ratio va changer, et donc p
 
 Les multihops permettent d'échanger n'importe quels tokens, même si aucune paire n'existe entre ces 2 tokens. Par exemple s'il existe une paire `LDOGE/BNB` ainsi qu'une paire `BUSD/BNB`, mais aucune paire `LDOGE/BUSD`, grace aux multihops, il est possible d'échanger du `LDOGE` contre du `BUSD`, en trouvant un chemin entre d'autres pools.
 
-![LamboSwap Multihops](multihops.png)
+![LegatoSwap Multihops](multihops.png)
 
 ### Slippage tolerance
 
@@ -44,7 +44,7 @@ Si la différence de montant dépasse la slippage tolerance, la transaction est 
 
 Par exemple, pour un token appliquant une taxe de 4%, la slippage tolerance doit être d'au moins 4%.
 
-## Swapper avec LamboSwap
+## Swapper avec LegatoSwap
 
 L'interface de swapping est assez intuitive. Il suffit de sélectionner:
 
@@ -98,7 +98,7 @@ Admettons maintenant qu'après quelques jours, le prix  du `BNB` passe à `400 B
 
 Ajouter de la liquidité vous a donc fait perdre `100 BUSD`.
 
-![LamboSwap Impermanent loss](impermanent-loss.png)
+![LegatoSwap Impermanent loss](impermanent-loss.png)
 
 Évidement, ce cas est assez extrême, nous sommes partis du principe que le prix du BNB a été multiplié par 4 en quelques jours. Mais il illustre bien le mécanisme derrière les pertes non permanentes.
 
@@ -128,9 +128,9 @@ Si la pool dans laquelle vous avez ajouté votre liquidité n’apparaît par su
 
 Le staking consiste à bloquer des tokens sur un smart contrat (une pool de staking) en échange d’intérêts sous la forme d'autres token. Une pool de staking peut alors être représentée comme un 2 stock de tokens, un stock constitué des token que les utilisateurs bloquent, et un stock constitué des tokens que les utilisateurs reçoivent.
 
-### LamboStake
+### LegatoStake
 
-Notre offre de staking repose sur le protocole: **LamboStake**. Nous avons la possibilité de créer n'importe quelle pool de staking, la création d'une pool nécessitant le réglage de quelques paramètres:
+Notre offre de staking repose sur le protocole: **LegatoStake**. Nous avons la possibilité de créer n'importe quelle pool de staking, la création d'une pool nécessitant le réglage de quelques paramètres:
 
 - **Le token à staker:** L'adresse du token que les utilisateurs devront bloquer dans la pool.
 - **Le token à distribuer:** L'adresse du token qui sera distribué aux stakers.
@@ -141,7 +141,7 @@ Notre offre de staking repose sur le protocole: **LamboStake**. Nous avons la po
 - **Le minimum total à staker:** Comme le minimum de stakers, ce paramètre correspond à la quantité minimale de tokens à être bloqués dans la pool pour que l'intégralité des intérêts soit distribués.
 - **La taxe:** Le montant de la taxe prélevé au moment du dépôt ou du retrait de tokens dans la pool. Dans le cas où le token à staker est le même que le token à distribuer, cette taxe sert à alimenter le stock de tokens à distribuer.
 
-Une fois la pool configurée, déployée, et le stock de tokens à distribuer rempli, elle apparaît automatiquement sur l'interface de staking de LamboSwap.
+Une fois la pool configurée, déployée, et le stock de tokens à distribuer rempli, elle apparaît automatiquement sur l'interface de staking de LegatoSwap.
 
 ### Minage de liquidité
 
@@ -151,9 +151,9 @@ C'est là qu'intervient le minage de liquidité (liquidity mining), une pool de 
 
 *Plus de liquidité, implique un prix plus stable et un meilleur prix plancher.*
 
-## Staker sur LamboSwap
+## Staker sur LegatoSwap
 
-Dans le menu **Stake** de LamboSwap apparaît la liste des pools de staking disponibles, ainsi que quelques informations sur chaque pool:
+Dans le menu **Stake** de LegatoSwap apparaît la liste des pools de staking disponibles, ainsi que quelques informations sur chaque pool:
 
 - Les tokens de la pool, sous la forme `TOKEN À STAKER / TOKEN À RECEVOIR`
 - L'APY, le taux de rendement sur un an (ce taux est amené à varier)
@@ -165,7 +165,7 @@ Dans le menu **Stake** de LamboSwap apparaît la liste des pools de staking disp
 
 ### Claim et Retrieve
 
-Une fois vos tokens stakés, La pool calculera vos intérêts en fonction de ses paramètres. Tant que ces intérêts ne sont pas réclamés, selon l'activité au sein de la pool, leur montant peut évoluer à la hausse comme à la baisse. Pour sécuriser vos gains il suffit alors de les **Claim**, et pour les transférer sur votre adresse, il faut les **Retrieve** (LamboStake execute automatiquement un **Claim** avant chaque **Retrieve**).
+Une fois vos tokens stakés, La pool calculera vos intérêts en fonction de ses paramètres. Tant que ces intérêts ne sont pas réclamés, selon l'activité au sein de la pool, leur montant peut évoluer à la hausse comme à la baisse. Pour sécuriser vos gains il suffit alors de les **Claim**, et pour les transférer sur votre adresse, il faut les **Retrieve** (LegatoStake execute automatiquement un **Claim** avant chaque **Retrieve**).
 
 Pour les pools dont le token à staker est le même que le token à distribuer, l'action **Retrieve** va automatiquement ajouter vos gains à la pool.
 
@@ -173,6 +173,6 @@ L'action **Retrieve** en déplaçant des tokens d'une adresse à une adresse con
 
 ### Retrait
 
-Pour finir, il est à tout moment possible de retirer vos tokens de la pool staking (LamboStake execute automatiquement un **Retrieve** avant chaque retrait).
+Pour finir, il est à tout moment possible de retirer vos tokens de la pool staking (LegatoStake execute automatiquement un **Retrieve** avant chaque retrait).
 
 <Video option="UnstakeDemo" description="Demonstration d'un retrait de LDOGE dans une pool de staking" />

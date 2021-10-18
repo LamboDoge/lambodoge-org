@@ -30,8 +30,10 @@ export function colors(darkMode: boolean): Colors {
         white: '#ffffff',
         black: '#000000',
 
-        primary1: '#EF0044',
-        primary2: '#4518F9',
+        primary1: '#4C00EF',
+        primary2: '#D00CF0',
+
+        gradient1: 'linear-gradient(90deg, #4C00EF 0%, #D00CF0 100%)',
 
         bg1: '#11131E',
         bg2: '#00000080',

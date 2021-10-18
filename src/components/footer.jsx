@@ -33,7 +33,7 @@ const Footer = () => {
     return (
         <StyledFooter>
             <a
-                href='https://twitter.com/0xLamboDoge'
+                href='https://twitter.com/LegatoFinance'
                 target='_blank'
                 rel='noreferrer'
             >

@@ -1,13 +1,13 @@
 ---
-title: "DeFi Introduction with LamboSwap"
+title: "DeFi Introduction with LegatoSwap"
 date: '2021-09-21'
 banner: ./banner.png
 lang: 'en'
 ---
 
-# What is LamboSwap?
+# What is LegatoSwap?
 
-LamboSwap is the decentralised application developed by the LamboDoge project. At the moment of writing this, LamboSwap allows to swap BEP-20 tokens, add or remove liquidity, and stake tokens into multiple pools.
+LegatoSwap is the decentralised application developed by the Legato project. At the moment of writing this, LegatoSwap allows to swap BEP-20 tokens, add or remove liquidity, and stake tokens into multiple pools.
 
 In this post, I'll explain how each menu of the application works, in order to offer you the best possible user experience.
 
@@ -19,7 +19,7 @@ In this post, I'll explain how each menu of the application works, in order to o
 
 ### Automated Market Maker
 
-LamboSwap's swap follows the Automated Market Maker (AMM) approach. Each pair is represented by a liquidity pool, 2 stocks of assets whose value is identical. For example the pair `LDOGE/BNB` holds a stock of `LDOGE` and a stock of `BNB`, the price of `LDOGE` in `BNB` will be calculated based on the principle that the quantity of `LDOGE` in the pool had the same value that the quantity of `BNB` in this same pool.
+LegatoSwap's swap follows the Automated Market Maker (AMM) approach. Each pair is represented by a liquidity pool, 2 stocks of assets whose value is identical. For example the pair `LDOGE/BNB` holds a stock of `LDOGE` and a stock of `BNB`, the price of `LDOGE` in `BNB` will be calculated based on the principle that the quantity of `LDOGE` in the pool had the same value that the quantity of `BNB` in this same pool.
 
 A pool `LDOGE/BNB` with `1000 LDOGE` and `10 BNB` would means that `1000 LDOGE` is worth `10 BNB`. So `1 LDOGE` is worth `0.01 BNB`.
 
@@ -27,7 +27,7 @@ A pool `LDOGE/BNB` with `1000 LDOGE` and `10 BNB` would means that `1000 LDOGE` 
 
 In the context of the `LDOGE/BNB` pool, if a user wants to swap his `BNB` against some `LDOGE`, he will actually deposit his `BNB` in the pool and take some `LDOGE` in exchange. This action has the effect of changing the price of `LDOGE`, since the ratio `LDOGE` `BNB` in the pool is no longer the same.
 
-![LamboSwap AMM](amm.png)
+![LegatoSwap AMM](amm.png)
 
 The more is exchanged, the more the ratio will change, and so the more the price will change too. This rate of change is called **price impact**.
 
@@ -35,7 +35,7 @@ The more is exchanged, the more the ratio will change, and so the more the price
 
 Multihops allows to exchange any tokens, even if no pair exists between these 2 tokens. For example if there's a pair `LDOGE/BNB` and a pair `BUSD/BNB`, but no `LDOGE/BUSD` pair, thanks to multihops, it is now possible to exchange some `LDOGE` against some `BUSD`, by finding a path between other pools
 
-![LamboSwap Multihops](multihops.png)
+![LegatoSwap Multihops](multihops.png)
 
 ### Slippage tolerance
 
@@ -43,7 +43,7 @@ When performing a swap, the interface displays the quantity of tokens which will
 
 For example, for a token applying a 4% tax, slippage tolerance must be at least 4%.
 
-## Swap with LamboSwap
+## Swap with LegatoSwap
 
 The swapping interface is quite intuitive. Just select:
 
@@ -97,7 +97,7 @@ Now let's say that after a few days, the `BNB` price increases to `400 BUSD`, in
 
 Supplying liquidity made you lose `100 BUSD`.
 
-![LamboSwap Impermanent loss](impermanent-loss.png)
+![LegatoSwap Impermanent loss](impermanent-loss.png)
 
 Of course, this example is quite extreme, we assumed that the price of BNB was multiplied by 4 in a few days. But it does illustrate well the mechanism behind impermanent losses.
 
@@ -127,9 +127,9 @@ If the pool where you have added your liquidity doesn't appear on the interface,
 
 Staking consists in locking tokens on a smart contract (a staking pool) in exchange of interests in the form of other tokens. You may think of a staking pool as 2 stocks of tokens, a stock made of tokens that users lock, and a stock made of tokens that users receive.
 
-### LamboStake
+### LegatoStake
 
-Our staking offer is base on the **LamboStake** protocol. We have the possibility to create any staking pool, the create of a pool requires the setting of some parameters:
+Our staking offer is base on the **LegatoStake** protocol. We have the possibility to create any staking pool, the create of a pool requires the setting of some parameters:
 
 - **The token to stake:** The address of the token that users will have to lock in the pool.
 - **The token do distribute:** The address of the token that will be distributed to stakers
@@ -140,7 +140,7 @@ Our staking offer is base on the **LamboStake** protocol. We have the possibilit
 - **The total minimum to be staked:** Like the minimum number of stakers, this parameter corresponds to the minimum amount of tokens that must be locked in the pool for the full interest to be distributed.
 - **The tax:** The amount deposit and withdrawal fees in the pool. In the case where the token to be stacked and the token to be distributed are the same, this tax is used to feed the stock of tokens to be distributed.
 
-Once the pool is configure, deployed, and the stock of tokens to distribute filled, it will automatically appear on the LamboSwap staking interface.
+Once the pool is configure, deployed, and the stock of tokens to distribute filled, it will automatically appear on the LegatoSwap staking interface.
 
 ### Liquidity mining
 
@@ -150,9 +150,9 @@ This is where liquidity mining comes in, a staking pool where the token to stake
 
 *More liquidity means a more stable price and a better price floor.*
 
-## Stake with LamboSwap
+## Stake with LegatoSwap
 
-In the **Stake** menu of LamboSwap appear the list of available staking pools, and some informations about each pool:
+In the **Stake** menu of LegatoSwap appear the list of available staking pools, and some informations about each pool:
 
 - The pool's tokens, in the form `TOKEN TO STAKE / TOKEN TO RECEIVE`.
 - The APY, the one-year rate of return (this rate is subject to change).
@@ -164,7 +164,7 @@ In the **Stake** menu of LamboSwap appear the list of available staking pools, a
 
 ### Claim and Retrieve
 
-Once you've staked your tokens, the pool will calculate your interest according to its parameters. As long as these interests are not claimed, depending on the activity within the pool, their amount can change up or down. To secure your gains you just have to **Claim** them, and to transfer them to your address you have to **Retrieve** them (LamboStake automatically performs a **Claim** before each **Retrieve**).
+Once you've staked your tokens, the pool will calculate your interest according to its parameters. As long as these interests are not claimed, depending on the activity within the pool, their amount can change up or down. To secure your gains you just have to **Claim** them, and to transfer them to your address you have to **Retrieve** them (LegatoStake automatically performs a **Claim** before each **Retrieve**).
 
 For pools where the token to stake and the token receive are the same, the **Retrieve** action will automatically add your gains back to the pool.
 
@@ -172,6 +172,6 @@ The **Retrieve** action by moving tokens from one address to another will consum
 
 ### Withdraw
 
-Finally, it is possible to withdraw your tokens from the staking pool at any time (LamboStake automatically performs a **Retrieve** before each withdrawal).
+Finally, it is possible to withdraw your tokens from the staking pool at any time (LegatoStake automatically performs a **Retrieve** before each withdrawal).
 
 <Video option="UnstakeDemo" description="Demonstration of a LDOGE withdrawal in a staking pool" />

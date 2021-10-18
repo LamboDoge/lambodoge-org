@@ -92,7 +92,7 @@ const SliderWrapper = styled.div`
 
 const StyledSlider = withStyles({
     root: {
-        color: '#EF0044',
+        color: '#4C00EF',
         height: 8,
     },
     thumb: {

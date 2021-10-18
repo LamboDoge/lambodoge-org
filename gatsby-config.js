@@ -7,9 +7,9 @@ const defaultLanguage = `en`
 
 module.exports = {
     siteMetadata: {
-        title: `LamboDoge`,
+        title: `Legato`,
         description: `The new generation of automatic yield tokens`,
-        author: `@LamboDoge`,
+        author: `@Legato`,
         menulinks: menu,
         siteUrl: `https://lambodoge.org`,
         defaultLanguage,
@@ -60,9 +60,9 @@ module.exports = {
                     }, {
                         resolve: `gatsby-remark-twitter-cards`,
                         options: {
-                            title: 'LamboDoge', // website title
+                            title: 'Legato', // website title
                             separator: '|', // default
-                            author: '@LamboDoge',
+                            author: '@Legato',
                             background: require.resolve('./static/images/twitter-card-bg.png'), // path to 1200x630px file or hex code, defaults to black (#000000)
                             fontColor: '#F7F7F7', // defaults to white (#ffffff)
                             fontStyle: 'sans-serif', // default
@@ -95,13 +95,13 @@ module.exports = {
         }, {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `LamboDoge Website`,
+                name: `Legato Website`,
                 short_name: `lamboDoge`,
                 start_url: `/`,
                 background_color: `#EF0044`,
                 theme_color: `#EF0044`,
                 display: `minimal-ui`,
-                icon: `src/images/lambodoge-icon.png`
+                icon: `src/images/legato-icon.png`
             },
         },
     ],

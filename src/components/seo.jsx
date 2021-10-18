@@ -18,7 +18,7 @@ function Seo({ description, lang, title, path }) {
 
     const metaDescription = description || site.siteMetadata.description
     const defaultTitle = site.siteMetadata?.title
-    const lamboTitle = 'LamboDoge'
+    const legatoTitle = 'Legato'
 
     return (
         <Helmet
@@ -31,7 +31,7 @@ function Seo({ description, lang, title, path }) {
                     content: metaDescription
                 }, {
                     property: `og:title`,
-                    content: lamboTitle
+                    content: legatoTitle
                 }, {
                     property: `og:description`,
                     content: metaDescription
@@ -46,7 +46,7 @@ function Seo({ description, lang, title, path }) {
                     content: site.siteMetadata?.author || ``
                 }, {
                     name: `twitter:title`,
-                    content: lamboTitle
+                    content: legatoTitle
                 }, {
                     name: `twitter:description`,
                     content: metaDescription

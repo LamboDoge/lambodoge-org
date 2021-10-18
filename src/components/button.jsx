@@ -14,5 +14,5 @@ const BaseButton = styled.button`
 
 export const PrimaryButton = styled(BaseButton)`
     color: ${({theme}) => theme.text1};
-    background: ${({theme}) => theme.primary1};
+    background: ${({theme}) => theme.gradient1};
 `

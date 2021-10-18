@@ -99,8 +99,15 @@ const SocialLinksWrapper = styled.div`
     `}
 `
 
-const LamboIllustration = styled(Img)`
+const LegatoIllustrationWrapper = styled.div`
     max-width: 582px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+`
+
+const LegatoIllustration = styled(Img)`
+    max-width: 450px;
     width: 100%;
     flex-shrink: 0;
 `
@@ -114,9 +121,9 @@ const TokenDataSection = styled(Section)`
 const IndexPage = (props) => {
     const data = useStaticQuery(graphql`
         {
-            lamboIllustration: file(relativePath: { eq: "lambo.png" }) {
+            legatoIllustration: file(relativePath: { eq: "legato.png" }) {
                 childImageSharp {
-                    fluid(quality: 100, maxWidth: 1024) {
+                    fluid(quality: 100, maxHeight: 1024) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -148,11 +155,13 @@ const IndexPage = (props) => {
                 description="The new generation of automatic yield tokens"
             />
             <IntroSection>
-                <LamboIllustration
-                    imgStyle={{ objectFit: 'contain' }}
-                    width='582px'
-                    fluid={data.lamboIllustration.childImageSharp.fluid}
-                />
+                <LegatoIllustrationWrapper>
+                    <LegatoIllustration
+                        imgStyle={{ objectFit: 'contain' }}
+                        width='582px'
+                        fluid={data.legatoIllustration.childImageSharp.fluid}
+                    />
+                </LegatoIllustrationWrapper>
                 <div>
                     <Title>
                         {translateMessageId('slogan-top', intl)}<br/>
@@ -163,7 +172,7 @@ const IndexPage = (props) => {
                     </Subtitle>
                     <SocialLinksWrapper>
                         <a
-                            href='https://twitter.com/0xLamboDoge'
+                            href='https://twitter.com/LegatoFinance'
                             target='_blank'
                             rel='noreferrer'
                         >
@@ -204,6 +213,20 @@ const IndexPage = (props) => {
         </>
     )
 }
+
+const Address = styled.p`
+  width: fit-content;
+
+  br {
+    display: none;
+  }
+
+  ${({theme}) => theme.media.small`
+    br {
+      display: initial;
+    }
+  `}
+`
 
 const TokenSectionWrapper = styled(RowCentered)`
     gap: 4rem;
@@ -278,6 +301,8 @@ const TokenSection = () => {
             </SectionTitle>
             <TokenSectionWrapper>
                 <div>
+                    <h3>{translateMessageId('contract', intl)}</h3>
+                    <Address>0xc32C50FA1854D0C8dF9<br/>032e5887a57aa84783e8A</Address>
                     <h3>{translateMessageId('no-tax', intl)}</h3>
                     <p>
                         {translateMessageId('no-tax-description', intl)}
