@@ -179,7 +179,7 @@ const IndexPage = (props) => {
                             <TwitterIcon />
                         </a>
                         <a
-                            href='https://t.me/LamboDogeEN'
+                            href='https://t.me/LegatoFinanceEN'
                             target='_blank'
                             rel='noreferrer'
                         >
