@@ -11,7 +11,7 @@ module.exports = {
         description: `The new generation of automatic yield tokens`,
         author: `@Legato`,
         menulinks: menu,
-        siteUrl: `https://lambodoge.org`,
+        siteUrl: `https://legato.finance`,
         defaultLanguage,
         supportedLanguages
     },
@@ -36,7 +36,7 @@ module.exports = {
                 generateRoutingRules: false,
                 bucketName: process.env.AWS_S3_BUCKET || 'NOT_SPECIFIED',
                 protocol: 'https',
-                hostname: 'lambodoge.org',
+                hostname: 'legato.finance',
                 acl: null
             }
         },

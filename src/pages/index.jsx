@@ -359,7 +359,7 @@ const DefiSection = () => {
     return (
         <Section>
             <SectionTitle
-                link='https://app.lambodoge.org'
+                link='https://app.legato.finance'
                 linkName={translateMessageId('launch-app', intl)}
             >
                 {translateMessageId('defi', intl)}

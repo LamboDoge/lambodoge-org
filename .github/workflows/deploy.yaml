@@ -20,7 +20,7 @@ jobs:
     
     environment:
       name: Production
-      url: https://lambodoge.org
+      url: https://legato.finance
   
     steps:
       - name: Checkout

@@ -298,7 +298,7 @@ const Header = ({pageContext}) => {
                     dismiss={closeMenu}
                 />
             </NavLinks>
-            <AppLink href='https://app.lambodoge.org' >
+            <AppLink href='https://app.legato.finance' >
                 <PrimaryButton>
                     {translateMessageId('use-app', intl)}
                 </PrimaryButton>
