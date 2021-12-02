@@ -124,9 +124,6 @@ const TokenData = () => {
             name: translateMessageId('mcap', intl),
             value: `$${formatter.format(`${mcap}` || 0)}`
         }, {
-            name: translateMessageId('holders', intl),
-            value: formatter.format(stats.holders || 0)
-        }, {
             name: translateMessageId('liquidity', intl),
             value: `$${formatter.format(`${liquidity}` || 0)}`
         }
