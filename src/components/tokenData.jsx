@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Web3 from 'web3/dist/web3.min.js'
 import styled from 'styled-components'
 import { useIntl } from 'gatsby-plugin-intl'
 import { translateMessageId } from '../utils/translations'
@@ -45,7 +44,7 @@ const NumberWrapper = styled.div`
 `
 
 async function getTokenData() {
-  const web3 = new Web3('https://bsc-dataseed1.binance.org:443')
+  const web3 = new window.Web3('https://bsc-dataseed1.binance.org:443')
 
   const WBNB_ADDRESS = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'
   const WBNB_BUSD_ADDRESS = '0x58f876857a02d6762e0101bb5c46a8c1ed44dc16'

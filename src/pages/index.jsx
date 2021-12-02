@@ -203,7 +203,7 @@ const IndexPage = (props) => {
                 </div>
             </IntroSection>
             <TokenDataSection>
-                {isLaunched
+                {isLaunched && typeof window !== "undefined"
                   ? <TokenData />
                   : <Countdown date={LAUNCH_DATE} onLaunch={() => setIsLaunched(true)} />
                 }
