@@ -37,10 +37,15 @@
     "gatsby-remark-twitter-cards": "^0.6.1",
     "gatsby-source-filesystem": "^3.9.0",
     "gatsby-transformer-sharp": "^3.9.0",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-on-screen": "^2.1.1",
-    "styled-components": "^5.3.0"
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "styled-components": "^5.3.0",
+    "web3": "^1.6.1"
   }
 }
